@@ -1,0 +1,44 @@
+#topLeftStim {
+
+  /* Position Styles */  
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+#topRightStim {
+
+  /* Position Styles */  
+  position: absolute;
+  right: 0;
+  top: 0;
+
+}
+
+#buttonStyle {
+
+  /* Position Styles */
+  position: absolute;
+  right: 50%;
+  bottom: 5%;
+
+  /* Font Styles */
+  color: black;
+  text-align: center;
+  font-style: normal;
+  font-size: 32px;
+  font-family: "Times New Roman";
+
+}
+
+#promptStyle {
+
+    /* Font Styles */
+    color: black;
+    text-align: center;
+    font-style: normal;
+    font-size: 32px;
+    font-family: "Times New Roman";
+
+}

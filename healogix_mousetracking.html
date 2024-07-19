@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <!-- adding in modules used in this script  -->
   <script src="https://unpkg.com/jspsych@7.3.4" type="text/javascript"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.2.0" type="text/javascript"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-preload@2.0.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@2.0.0"></script>
+  <script src="https://unpkg.com/@jspsych-contrib/plugin-html-choice@1.0.0"></script>
   <script src="https://unpkg.com/@jspsych/extension-mouse-tracking@1.0.3"></script>
+  <script src="https://unpkg.com/@jspsych/extension-mouse-tracking@1.0.3"></script>
+  <script src="stimuli.js"></script>
+  <script src="parameters.js"></script>
+  <script src="functions.js"></script>
 
-  <!-- adding in jspsych's style sheet -->
-  <link
-  rel="stylesheet"
-  href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css"
-  />
+  <!-- style sheets -->
+  <link rel="stylesheet" href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css"/>
+  <link rel="stylesheet" href="style.css"/>
 
-  <style>
-    .jspsych-btn {margin-bottom: 10px;}
-  </style>
 </head>
 <body></body>
 <script>
-
-/* 
-  Parameters.
-  Edit these parameters to change aspects of how the experiment will run
-*/
-
-var param1 = ''
-var param2 = ''
-var param3 = ''
 
 /* 
   Body of the Script
@@ -34,76 +27,50 @@ var param3 = ''
   See jspsyh website (https://www.jspsych.org/) for more information before editing below this line
 */
 
-  var jsPsych = initJsPsych({
-    extensions: [
-      { type: jsPsychExtensionMouseTracking, params: {minimum_sample_time: 0} }
-    ]
-  });
+var jsPsych = initJsPsych({
+  on_finish: function() {
+    jsPsych.data.displayData();
+  },
+  extensions: [
+    { type: jsPsychExtensionMouseTracking, params: {minimum_sample_time: 0} }
+  ]
+});
 
-  var trial = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: '<div id="target" style="width:250px; height: 250px; background-color: #333; margin: auto;"></div>',
-    choices: ['Done'],
-    prompt: "<p>Move your mouse around inside the square.</p>",
-    extensions: [
-      {type: jsPsychExtensionMouseTracking, params: {targets: ['#target']}}
-    ],
-    data: {
-      task: 'draw'
-    }
-  };
+var instruct = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: construct_both,
+  choices: ['Start'],
+  button_html: construct_button,
+  prompt: construct_prompt,
+  data: {
+    task: 'instructions'
+  }
+};
 
-  var replay = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: '<div id="target" style="width:250px; height: 250px; background-color: #333; margin: auto; position: relative;"></div>',
-    choices: ['Done'],
-    prompt: "<p>Here's the recording of your mouse movements</p>",
-    on_load: function(){
-      var mouseMovements = jsPsych.data.get().last(1).values()[0].mouse_tracking_data;
-      var targetRect = jsPsych.data.get().last(1).values()[0].mouse_tracking_targets['#target'];
-      
-      var startTime = performance.now();
-
-      function draw_frame() {
-        var timeElapsed = performance.now() - startTime;
-        var points = mouseMovements.filter((x) => x.t <= timeElapsed);
-        var html = ``;
-        for(var p of points){
-          html += `<div style="width: 3px; height: 3px; background-color: blue; position: absolute; top: ${p.y - 1 - targetRect.top}px; left: ${p.x - 1 - targetRect.left}px;"></div>`
-        }
-        document.querySelector('#target').innerHTML = html;
-        if(points.length < mouseMovements.length) {
-          requestAnimationFrame(draw_frame);
-        }
+var trial = {
+      type: jsPsychHtmlChoice,
+      html_array: [
+        construct_stim_one,
+        construct_stim_two,
+      ],
+      trial_duration: trial_duration,
+      values: [null, null],
+      response_ends_trial: response_ends_trial,
+      time_after_response: time_after_response,
+      extensions: [
+        {type: jsPsychExtensionMouseTracking, params: {targets: []}}
+      ],
+      data: {
+        task: 'trial'
       }
+};
 
-      requestAnimationFrame(draw_frame);
+mouse_track_procedure = {
+  timeline: [instruct, trial],
+  timeline_variables: stim_list,
+}
 
-    },
-    data: {
-      task: 'replay'
-    }
-  } 
-
-  var show_data = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: function() {
-      var trial_data = jsPsych.data.get().filter({task: 'draw'}).last(1).values();
-      var trial_json = JSON.stringify(trial_data, null, 2);
-      return `<p style="margin-bottom:0px;"><strong>Trial data:</strong></p>
-        <pre style="margin-top:0px;text-align:left;">${trial_json}</pre>`;
-    },
-    choices: ['Repeat demo']
-  };
-
-  var trial_loop = {
-    timeline: [trial, replay, show_data],
-    loop_function: function() {
-      return true;
-    }
-  };
-
-  jsPsych.run([trial_loop]);
+jsPsych.run([mouse_track_procedure]);
 
 </script>
 
