@@ -9,6 +9,7 @@
   <script src="https://unpkg.com/@jspsych-contrib/plugin-html-choice@1.0.0"></script>
   <script src="https://unpkg.com/@jspsych/extension-mouse-tracking@1.0.3"></script>
   <script src="https://unpkg.com/@jspsych/extension-mouse-tracking@1.0.3"></script>
+  <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
   <script src="stimuli.js"></script>
   <script src="parameters.js"></script>
   <script src="functions.js"></script>
@@ -29,7 +30,19 @@
 
 var jsPsych = initJsPsych({
   on_finish: function() {
-    jsPsych.data.displayData();
+
+    var mouse_tracking_data = jsPsych.data.get().select('mouse_tracking_data').values;
+    var trace = mouse_tracking_data.map((j, idx) => {
+      var x = j.map((k) => k.x)
+      x = x.map((t) => t - x[0])
+      var y = j.map((k) => k.y)
+      y = y.map((t) => (t - y[0]) * -1 )
+      return {x:x, y:y, type: 'scatter', name: `trial ${idx+1}`}
+    })
+
+    content = document.getElementById('jspsych-content');
+    Plotly.newPlot(content, trace);    
+
   },
   extensions: [
     { type: jsPsychExtensionMouseTracking, params: {minimum_sample_time: 0} }
