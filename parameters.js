@@ -7,7 +7,7 @@
 */
 
 // prompt
-var prompt_text         = 'Click on your choice with your mouse. Press Start to Begin.';
+var prompt_text         = 'Is the circle above blue or orange? Please select your answer with your mouse. Press Start to Begin.';
 
 // button
 var start_button_text   = 'Start';
