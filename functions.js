@@ -3,7 +3,7 @@ function construct_button() {
 }
 
 function construct_prompt() {
-    return `<img src=${jsPsych.timelineVariable('stimCenter')}><p id=promptStyle>${prompt_text}</p>`
+    return `<img id=centerStim src=${jsPsych.timelineVariable('stimCenter')}><p id=promptStyle>${prompt_text}</p>`
 }
 
 function construct_stim_one() {
