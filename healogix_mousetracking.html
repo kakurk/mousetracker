@@ -41,7 +41,9 @@ var jsPsych = initJsPsych({
     })
 
     content = document.getElementById('jspsych-content');
-    Plotly.newPlot(content, trace);    
+    Plotly.newPlot(content, trace);
+
+    jsPsych.data.get().localSave('csv','mydata.csv');
 
   },
   extensions: [
