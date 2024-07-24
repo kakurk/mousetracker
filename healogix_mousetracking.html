@@ -2,14 +2,20 @@
 <html>
 <head>
 
-  <!-- adding in modules used in this script  -->
+  <!-- jspsych javascript -->
   <script src="https://unpkg.com/jspsych@7.3.4" type="text/javascript"></script>
   <script src="https://unpkg.com/@jspsych/plugin-preload@2.0.0"></script>
   <script src="https://unpkg.com/@jspsych/plugin-html-button-response@2.0.0"></script>
   <script src="https://unpkg.com/@jspsych-contrib/plugin-html-choice@1.0.0"></script>
   <script src="https://unpkg.com/@jspsych/extension-mouse-tracking@1.0.3"></script>
   <script src="https://unpkg.com/@jspsych/extension-mouse-tracking@1.0.3"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-image-button-response@1.2.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3"></script>
+  
+  <!-- plotly javascript -->
   <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+
+  <!-- custom javascript -->
   <script src="stimuli.js"></script>
   <script src="parameters.js"></script>
   <script src="functions.js"></script>
@@ -28,63 +34,53 @@
   See jspsyh website (https://www.jspsych.org/) for more information before editing below this line
 */
 
+// initialze jsPsych
 var jsPsych = initJsPsych({
-  on_finish: function() {
-
-    var mouse_tracking_data = jsPsych.data.get().select('mouse_tracking_data').values;
-    var trace = mouse_tracking_data.map((j, idx) => {
-      var x = j.map((k) => k.x)
-      x = x.map((t) => t - x[0])
-      var y = j.map((k) => k.y)
-      y = y.map((t) => (t - y[0]) * -1 )
-      return {x:x, y:y, type: 'scatter', name: `trial ${idx+1}`}
-    })
-
-    content = document.getElementById('jspsych-content');
-    Plotly.newPlot(content, trace);
-
-    jsPsych.data.get().localSave('csv','mydata.csv');
-
-  },
+  on_finish: build_mousetrack_fig,
   extensions: [
     { type: jsPsychExtensionMouseTracking, params: {minimum_sample_time: 0} }
   ]
 });
 
+// instructions
 var instruct = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: construct_both,
+  stimulus: construct_instr_stim,
   choices: ['Start'],
-  button_html: construct_button,
-  prompt: construct_prompt,
+  button_html: construct_instr_buttn,
+  prompt: null,
   data: {
     task: 'instructions'
-  }
+  },
 };
 
+// trial
 var trial = {
-      type: jsPsychHtmlChoice,
-      html_array: [
-        construct_stim_one,
-        construct_stim_two,
-      ],
-      trial_duration: trial_duration,
-      values: [null, null],
-      response_ends_trial: response_ends_trial,
-      time_after_response: time_after_response,
-      extensions: [
-        {type: jsPsychExtensionMouseTracking, params: {targets: []}}
-      ],
-      data: {
-        task: 'trial'
-      }
-};
+  type: jsPsychHtmlButtonResponse,
+  stimulus: construct_trial_stim,
+  choices: [jsPsych.timelineVariable('stim1'), jsPsych.timelineVariable('stim2')],
+  prompt: null,
+  button_html: construct_trial_bttns,
+  extensions: [
+    {type: jsPsychExtensionMouseTracking, params: {targets: []}}
+  ],  
+}
 
+// fixations
+var fixation = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: '',
+  choices: "NO_KEYS",
+  trial_duration: 1,
+}
+
+// experimental procedure
 mouse_track_procedure = {
-  timeline: [instruct, trial],
+  timeline: [instruct, fixation, trial, fixation],
   timeline_variables: stim_list,
 }
 
+// run the experiment
 jsPsych.run([mouse_track_procedure]);
 
 </script>

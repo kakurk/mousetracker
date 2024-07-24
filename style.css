@@ -48,5 +48,8 @@
     font-style: normal;
     font-size: 32px;
     font-family: "Times New Roman";
+    text-wrap: balance;
+    width: 600px;
+    line-height: 1.2em;
 
 }
