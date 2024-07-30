@@ -56,11 +56,16 @@ function build_mousetrack_fig() {
 
   function find_unique_stim(stim_array){
     // find unique stimuli contained within an array of stimuli
+    
     var stim1 = stim_array.map((x) => x.stim1)
     var stim2 = stim_array.map((x) => x.stim2)
     var stim3 = stim_array.map((x) => x.stimCenter)
+
     var allStim = stim1.concat(stim2).concat(stim3)
+    
     var unique_values = [...new Set(allStim)]
     var unique_values_array = Array.from(unique_values)
+    
     return unique_values_array
-  }
+  
+}

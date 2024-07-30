@@ -6,11 +6,20 @@ var jsPsych = initJsPsych({
     ]
   });
 
+  // preload
   var preload = {
     type: jsPsychPreload,
     images: find_unique_stim(stim_list)
   }
   
+var instructions = {
+  type: jsPsychInstructions,
+  pages: ['Page 1', 'Page 2'],
+  buttom_label_next: "",
+  button_label_previous: "",
+  show_clicable_nav: true
+}
+
   // instructions
   var instruct = {
     type: jsPsychHtmlButtonResponse,
@@ -34,15 +43,7 @@ var jsPsych = initJsPsych({
       {type: jsPsychExtensionMouseTracking, params: {targets: []}}
     ],  
   }
-  
-  // fixations
-  var fixation = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: '',
-    choices: "NO_KEYS",
-    trial_duration: 1,
-  }
-  
+
   // experimental procedure
   mouse_track_procedure = {
     timeline: [instruct, trial],
@@ -50,4 +51,4 @@ var jsPsych = initJsPsych({
   }
   
   // run the experiment
-  jsPsych.run([preload, mouse_track_procedure]);
+  jsPsych.run([preload, instructions, mouse_track_procedure]);
