@@ -5,6 +5,11 @@ var jsPsych = initJsPsych({
       { type: jsPsychExtensionMouseTracking, params: {minimum_sample_time: 0} }
     ]
   });
+
+  var preload = {
+    type: jsPsychPreload,
+    images: find_unique_stim(stim_list)
+  }
   
   // instructions
   var instruct = {
@@ -40,9 +45,9 @@ var jsPsych = initJsPsych({
   
   // experimental procedure
   mouse_track_procedure = {
-    timeline: [instruct, fixation, trial, fixation],
+    timeline: [instruct, trial],
     timeline_variables: stim_list,
   }
   
   // run the experiment
-  jsPsych.run([mouse_track_procedure]);
+  jsPsych.run([preload, mouse_track_procedure]);
