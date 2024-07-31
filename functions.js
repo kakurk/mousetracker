@@ -86,8 +86,8 @@ function build_end_screen() {
 
 }
 
-function find_unique_stim(stim_array){
-    // find unique stimuli contained within an array of stimuli
+function find_unique_images(stim_array){
+    // find unique images contained within an array of stimuli
     
     var stim1 = stim_array.map((x) => x.stim1)
     var stim2 = stim_array.map((x) => x.stim2)
@@ -98,6 +98,25 @@ function find_unique_stim(stim_array){
     var unique_values = [...new Set(allStim)]
     var unique_values_array = Array.from(unique_values)
     
-    return unique_values_array
+    var image_files = unique_values_array.filter((file)=>['jpg','png'].includes(file.split('.').pop()))
+    debugger
+    return image_files
+  
+}
+
+function find_unique_videos(stim_array){
+    // find unique videos contained within an array of stimuli
+    
+    var stim1 = stim_array.map((x) => x.stim1)
+    var stim2 = stim_array.map((x) => x.stim2)
+    var stim3 = stim_array.map((x) => x.stimCenter)
+
+    var allStim = stim1.concat(stim2).concat(stim3)
+    
+    var unique_values = [...new Set(allStim)]
+    var unique_values_array = Array.from(unique_values)
+    var video_files = unique_values_array.filter((file)=>['mp4'].includes(file.split('.').pop()))
+    debugger
+    return video_files
   
 }
