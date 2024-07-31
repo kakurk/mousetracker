@@ -18,16 +18,13 @@ var show_page_number      = true;
 var page_label            = 'Page';
 
 // trial instructions
-var trial_inst_prompt_text = null; //'Is the image a fruit or a vegetable? Please click on your response as quickly and accurately as you can. Press start to begin trial.';
+var trial_inst_prompt_text = 'Is the image a fruit or a vegetable? Please click on your response as quickly and accurately as you can. Press start to begin trial.'; // can be null
 var start_button_text      = 'Start';
 
 // trial
-var trial_prompt        = null;//'Fruit or Veggie?';
-var trial_duration      = null;
-var response_ends_trial = true;
-var time_after_response = null;
+var trial_prompt        = 'Fruit or Veggie?'; // can be null
 
 // farewell
 var farewell_messsage  = "You have completed the experiment. Thank you for participating!";
 var farewell_link_text = "Click here to return to the survey.";
-var farewell_link      = "https://app.prolific.co/submissions/complete?cc=C995R784";
+var farewell_link      = "https://healogix.com/";
