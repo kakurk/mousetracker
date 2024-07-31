@@ -17,13 +17,12 @@ var button_label_previous = "Previous";
 var show_page_number      = true;
 var page_label            = 'Page';
 
-// prompt
+// trial instructions
 var prompt_text         = 'Is the image a fruit or a vegetable? Please click on your response as quickly and accurately as you can. Press start to begin trial.';
-
-// button
 var start_button_text   = 'Start';
 
 // trial timing
+var trial_prompt        = 'Fruit or Veggie?';
 var trial_duration      = null;
 var response_ends_trial = true;
 var time_after_response = null;
