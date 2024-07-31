@@ -7,8 +7,6 @@ function add_para_tag_to_instrt(element, index, array){
     el.appendChild(document.createTextNode(element));
     el.className = 'instructionsPara';
     el.id = `instructPage${index+1}`
-    debugger
-    el.outerHTML
     return el.outerHTML
 }
 
