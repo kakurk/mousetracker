@@ -1,10 +1,10 @@
 /* Functions for constructing instructions stimuli */
 
-function add_para_tag_to_instrt(x){
+function add_para_tag_to_instrt(element, index, array){
     // take a string 'x' and add paragraph tags around it, giving it a unique id
     // designed for the jspsych instructions module
     var el = document.createElement("p");
-    el.appendChild(document.createTextNode(x));
+    el.appendChild(document.createTextNode(element));
     debugger
     el.outerHTML
     return el.outerHTML
