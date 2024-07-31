@@ -15,13 +15,21 @@ function construct_instr_buttn() {
 }
 
 function construct_trialInstPrompt() {
-    return `<p id=trialInstPrompt>${trial_inst_prompt_text}</p>`
+    if(trial_inst_prompt_text === null){
+        return null
+    }
+    else {
+        return `<p id=trialInstPrompt>${trial_inst_prompt_text}</p>`        
+    }
 }
 
 function construct_trialPrompt() {
-    return `<p id=trialPrompt>${trial_prompt}</p>`
+    if(trial_prompt === null ){
+        return null
+    } else {
+        return `<p id=trialPrompt>${trial_prompt}</p>`
+    }
 }
-
 
 function construct_stim_one() {
     return `<img id=topLeftStim src="${jsPsych.timelineVariable('stim1')}">`
