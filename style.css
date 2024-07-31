@@ -7,6 +7,9 @@
   font-style: normal;
   font-size: 24px;
   font-family: "Times New Roman";
+  text-wrap: balance;
+  width: 600px;
+  line-height: 1.2em;  
 }
 
 /* This style applies only to the instructions page X */
@@ -95,4 +98,24 @@
   font-size: 32px;
   font-family: "Times New Roman";
 
+}
+
+/* Farewell Screen */
+
+#farewellPara {
+
+  color: black;
+  text-align: center;
+  font-style: normal;
+  font-size: 32px;
+  font-family: "Times New Roman";  
+
+}
+
+#farewellLink {
+  color: black;
+  text-align: center;
+  font-style: normal;
+  font-size: 32px;
+  font-family: "Times New Roman";    
 }

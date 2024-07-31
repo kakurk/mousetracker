@@ -60,9 +60,11 @@ function build_end_screen() {
 
     var farewell_text = document.createTextNode(farewell_messsage);
     farewell_paragraph.appendChild(farewell_text);
+    farewell_paragraph.id = 'farewellPara'
     
     var linkText = document.createTextNode(farewell_link_text);
     a.appendChild(linkText);
+    a.id = 'farewellLink'
     
     // farewell link based on the session
     a.href = farewell_link;
