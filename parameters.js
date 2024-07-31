@@ -7,7 +7,11 @@
 */
 
 // instructions
-var instructions_pages    = ['Page 1', 'Page 2'];
+var instructions_pages    = ['Welcome to the experiment!', 
+                             'In this experiment, you will be classifying images as either fruits or veggitables',
+                            'For each trial, you will press start when you are ready to begin.',
+                            'After clicking start, please click the correct category for the displayed image in the upper right or upper left of the screen.',
+                            'Press next when you are ready to begin.'];
 var button_label_next     = "Next";
 var button_label_previous = "Previous";
 var show_page_number      = true;
