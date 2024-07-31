@@ -13,7 +13,10 @@ var preload = {
   type: jsPsychPreload,
   //images: find_unique_stim(stim_list),
   images: ['veg_text.jpg', 'fruit_text.jpg'],
-  video: ['sample_video_clipped_three.mp4']
+  video: ['sample_video_clipped_three.mp4'],
+  data: {
+    task: 'preload'
+  }
 }
 
 // enter full screen mode
@@ -23,7 +26,10 @@ var fullscreen = {
   fullscreen_mode: true,
   stimulus: '<p>The experiment will switch to fullscreen mode when you press the button below</p>',
   choices: ['Continue'],
-  delay_after: 1000
+  delay_after: 1000,
+  data: {
+    task: 'fullscreen'
+  }
 }
 
 // Navigateable participant instructions
@@ -63,7 +69,10 @@ var trial = {
   button_html: ['<img id=topLeftStim src="%choice%"></img>', '<img id=topRightStim src="%choice%"></img>'],
   extensions: [
     {type: jsPsychExtensionMouseTracking, params: {targets: []}}
-  ],  
+  ],
+  data: {
+    task: 'trial'
+  }
 }
 
 // experimental procedure
