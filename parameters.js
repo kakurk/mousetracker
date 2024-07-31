@@ -9,9 +9,9 @@
 // instructions
 var instructions_pages    = ['Welcome to the experiment!', 
                              'In this experiment, you will be classifying images as either fruits or veggitables',
-                            'For each trial, you will press start when you are ready to begin.',
-                            'After clicking start, please click the correct category for the displayed image in the upper right or upper left of the screen.',
-                            'Press next when you are ready to begin.'];
+                             'For each trial, you will press start when you are ready to begin.',
+                             'After clicking start, please click the correct category for the displayed image in the upper right or upper left of the screen.',
+                             'Press next when you are ready to begin.'];
 var button_label_next     = "Next";
 var button_label_previous = "Previous";
 var show_page_number      = true;
@@ -27,3 +27,8 @@ var start_button_text   = 'Start';
 var trial_duration      = null;
 var response_ends_trial = true;
 var time_after_response = null;
+
+// farewell
+var farewell_messsage  = "You have completed the experiment. Thank you for participating!";
+var farewell_link_text = "Click here to return to the survey.";
+var farewell_link      = "https://app.prolific.co/submissions/complete?cc=C995R784";

@@ -36,23 +36,26 @@ function construct_trial_bttns(x) {
 
 }
 
-function build_mousetrack_fig() {
+function build_end_screen() {
 
-    var mouse_tracking_data = jsPsych.data.get().select('mouse_tracking_data').values;
-    var trace = mouse_tracking_data.map((j, idx) => {
-      var x = j.map((k) => k.x)
-      x = x.map((t) => t - x[0])
-      var y = j.map((k) => k.y)
-      y = y.map((t) => (t - y[0]) * -1 )
-      return {x:x, y:y, type: 'scatter', name: `trial ${idx+1}`}
-    })
+    // Display the link so participants can give themselves SONA credit
+    var el = jsPsych.getDisplayElement();
+    var a  = document.createElement('a');
+    var farewell_paragraph = document.createElement('p');
 
-    content = document.getElementById('jspsych-content');
-    Plotly.newPlot(content, trace);
+    var farewell_text = document.createTextNode(farewell_messsage);
+    farewell_paragraph.appendChild(farewell_text);
+    
+    var linkText = document.createTextNode(farewell_link_text);
+    a.appendChild(linkText);
+    
+    // farewell link based on the session
+    a.href = farewell_link;
+    
+    el.appendChild(farewell_paragraph);
+    el.appendChild(a);
 
-    jsPsych.data.get().localSave('csv','mydata.csv');
-
-  }
+}
 
   function find_unique_stim(stim_array){
     // find unique stimuli contained within an array of stimuli
