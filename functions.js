@@ -1,5 +1,15 @@
 /* Functions for constructing instructions stimuli */
 
+function add_para_tag_to_instrt(x){
+    // take a string 'x' and add paragraph tags around it, giving it a unique id
+    // designed for the jspsych instructions module
+    var el = document.createElement("p");
+    el.appendChild(document.createTextNode(x));
+    debugger
+    el.outerHTML
+    return el.outerHTML
+}
+
 function construct_instr_buttn() {
     return `<button id=buttonStyle>${start_button_text}</button>`
 }
@@ -57,7 +67,7 @@ function build_end_screen() {
 
 }
 
-  function find_unique_stim(stim_array){
+function find_unique_stim(stim_array){
     // find unique stimuli contained within an array of stimuli
     
     var stim1 = stim_array.map((x) => x.stim1)

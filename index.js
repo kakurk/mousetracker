@@ -29,7 +29,7 @@ var fullscreen = {
 //  Instructions text set in the parameters.js script
 var instructions = {
   type: jsPsychInstructions,
-  pages: instructions_pages,
+  pages: instructions_pages.map((x) => add_para_tag_to_instrt(x)),
   buttom_label_next: button_label_next,
   button_label_previous: button_label_previous,
   show_clickable_nav: true,
