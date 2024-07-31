@@ -40,7 +40,11 @@ function construct_stim_two() {
 }
 
 function construct_trial_stim(){
-    return `<img id=StimCenter src=${jsPsych.timelineVariable('stimCenter')}></img>`
+    if(jsPsych.timelineVariable('stimType') === 'video'){
+        return `<div><video src=${jsPsych.timelineVariable('stimCenter')}></video></div>`
+    } else {
+        return `<img id=StimCenter src=${jsPsych.timelineVariable('stimCenter')}></img>`
+    }
 }
 
 function construct_instr_stim() {

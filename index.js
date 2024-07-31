@@ -11,7 +11,9 @@ var jsPsych = initJsPsych({
 //  ensures that there is no delay during trials
 var preload = {
   type: jsPsychPreload,
-  images: find_unique_stim(stim_list)
+  //images: find_unique_stim(stim_list),
+  images: ['veg_text.jpg', 'fruit_text.jpg'],
+  video: ['sample_video_clipped_three.mp4']
 }
 
 // enter full screen mode
