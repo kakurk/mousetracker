@@ -18,7 +18,7 @@ var show_page_number      = true;
 var page_label            = 'Page';
 
 // trial instructions
-var trial_inst_prompt_text = 'Is the image a fruit or a vegetable? Please click on your response as quickly and accurately as you can. Press start to begin trial.';
+var trial_inst_prompt_text = null; //'Is the image a fruit or a vegetable? Please click on your response as quickly and accurately as you can. Press start to begin trial.';
 var start_button_text      = 'Start';
 
 // trial

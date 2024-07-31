@@ -16,7 +16,7 @@ function construct_instr_buttn() {
 
 function construct_trialInstPrompt() {
     if(trial_inst_prompt_text === null){
-        return null
+        return ''
     }
     else {
         return `<p id=trialInstPrompt>${trial_inst_prompt_text}</p>`        
