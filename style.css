@@ -1,3 +1,6 @@
+/* Instructions Screens */
+
+/* This style applies to ALL instructions screens */
 .instructionsPara {
   color: black;
   text-align: center;
@@ -5,6 +8,8 @@
   font-size: 24px;
   font-family: "Times New Roman";
 }
+
+/* This style applies only to the instructions page X */
 
 #instructPage1 {
   color: black;
@@ -14,29 +19,19 @@
   font-family: "Times New Roman";
 }
 
-#jspsych-html-button-response-button-0, #topLeftStim {
+/* Trial Instructions */
 
-  /* Position Styles */  
-  position: fixed;
-  left: 0;
-  top: 0;
+#trialInstPrompt {
 
-}
-
-#jspsych-html-button-response-button-1, #topRightStim {
-
-  /* Position Styles */  
-  position: fixed;
-  right: 0;
-  top: 0;
-
-}
-
-#centerStim {
-
-  /* Size Styles */  
-  width: 150px;
-  height: 150px;
+  /* Font Styles */
+  color: black;
+  text-align: center;
+  font-style: normal;
+  font-size: 32px;
+  font-family: "Times New Roman";
+  text-wrap: balance;
+  width: 600px;
+  line-height: 1.2em;
 
 }
 
@@ -58,16 +53,46 @@
 
 }
 
-#promptStyle {
+/* Images Styles */
 
-    /* Font Styles */
-    color: black;
-    text-align: center;
-    font-style: normal;
-    font-size: 32px;
-    font-family: "Times New Roman";
-    text-wrap: balance;
-    width: 600px;
-    line-height: 1.2em;
+/* Applies to the image representing the top left choice during the trial instructions event and the trial event. */
+
+#jspsych-html-button-response-button-0, #topLeftStim {
+
+  /* Position Styles */  
+  position: fixed;
+  left: 0;
+  top: 0;
+
+}
+
+/* Applies to the image representing the top right choice during the trial instructions event and the trial event. */
+
+#jspsych-html-button-response-button-1, #topRightStim {
+
+  /* Position Styles */  
+  position: fixed;
+  right: 0;
+  top: 0;
+
+}
+
+/* Applies to the image the in the center of the screen during the trial */
+
+#centerStim {
+
+  /* Size Styles */  
+  width: 150px;
+  height: 150px;
+
+}
+
+#trialPrompt {
+
+  color: black;
+  text-align: center;
+  font-style: normal;
+  font-size: 32px;
+  font-family: "Times New Roman";
 
 }

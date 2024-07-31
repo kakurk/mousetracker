@@ -14,9 +14,14 @@ function construct_instr_buttn() {
     return `<button id=buttonStyle>${start_button_text}</button>`
 }
 
-function construct_prompt() {
-    return `<p id=promptStyle>${prompt_text}</p>`
+function construct_trialInstPrompt() {
+    return `<p id=trialInstPrompt>${prompt_text}</p>`
 }
+
+function construct_trialPrompt() {
+    return `<p id=trialPrompt>${prompt_text}</p>`
+}
+
 
 function construct_stim_one() {
     return `<img id=topLeftStim src="${jsPsych.timelineVariable('stim1')}">`
