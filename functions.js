@@ -5,6 +5,8 @@ function add_para_tag_to_instrt(element, index, array){
     // designed for the jspsych instructions module
     var el = document.createElement("p");
     el.appendChild(document.createTextNode(element));
+    el.className = 'instructionsPara';
+    el.id = `instructPage${index+1}`
     debugger
     el.outerHTML
     return el.outerHTML
