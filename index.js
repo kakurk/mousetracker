@@ -30,7 +30,7 @@ var instructions = {
   pages: instructions_pages,
   buttom_label_next: button_label_next,
   button_label_previous: button_label_previous,
-  show_clicable_nav: true,
+  show_clickable_nav: true,
   show_page_number: show_page_number,
   page_label: page_label,
   data: {
