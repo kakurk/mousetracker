@@ -1,11 +1,58 @@
-/* Instructions Screens */
+/*
+Styles
+Edit this file to change how aspects of the experiment will look.
+
+  Instructions Screen Styles
+
+    .instructionsPara = a class css style applied to all of the instructions pages. Controls things like the text color, text size, font, text wrapping, line spacing.
+      color       = text color. E.g., black, blue, yellow, red
+      text-align  = text alignment. E.g., center, left, right, justified
+      font-style  = E.g., normal, bold, italics, underlined
+      font-size   = in pixels. E.g., 12px, 24px, 36px, 48px
+      font-family = font. E.g., "Times New Rowman", Arial, Helvetica
+      text-wrap   = should the text wrap and how so? Can be: wrap, nowrap, balance, pretty, table. Google `css "text-wrap"`.
+      width       = how wide should the text be allowed to go before wrapping?
+      line-height = how much space should there be between lines? em is a proportional measurement. 1.2em = 120% of the "normal" line height.
+
+    #instructPage1 = an id css style applied to each instruction page individually. Only use this if you want one of the instructions pages to have a unique style.
+
+  Trial Instructions Styles
+
+    #trialInstPrompt = a css id style applied to the text prompt on the trial instructions event.
+
+    #buttonStyle    = a css id style applied to the button at the bottom of the trial instructions event.
+      position      = sets the position of the button. e.g., fixed, relative, static. Google `css position`.
+      left          = how far from the left side of the screen should the button be placed? Can be specificed relative to the screen size. E.g., 50%.
+      bottom        = how far from the bottom of the screen should the button be placed? Can be specified relative to the screen size. E.g., 5%
+      margin-right  = Sets a margin -- a blank space -- of this size to the right of the button. Can be specified relative to the screen size. E.g., 50%
+      transform     = Moves the element by some transform. Ensures that the button itself is centered. Google `css centering`
+
+  Trial Styles
+
+    #topLeftStim  = a css id style applied to the image in the top left of the screen corresponding to the first response option.
+
+    #topRightStim = a css id style applied to the image in the top right of the screen corresponding to the second response option.
+
+    #centerStim   = a css id style applied to the image in the center of the screen during a trial.
+      width       = height of the image, in pixels.
+      height      = width of the image, in pixels.
+
+    #trialPrompt  = a css id style applied to the text displayed below the center stimulus during a trial.
+
+  Farewell Page Styles
+
+    #farewellPara = a css id style applied to the paragraph at the beginning of the farewell screen.
+
+    #farewellLink = a css id style applied to the link at the end of the farewell screen.
+
+*/
 
 /* This style applies to ALL instructions screens */
 .instructionsPara {
-  color: black;
+  color: black; 
   text-align: center;
   font-style: normal;
-  font-size: 24px;
+  font-size: 18px;
   font-family: "Times New Roman";
   text-wrap: balance;
   width: 600px;
@@ -14,11 +61,7 @@
 
 /* This style applies only to the instructions page X */
 #instructPage1 {
-  color: black;
-  text-align: center;
-  font-style: normal;
   font-size: 18px;
-  font-family: "Times New Roman";
 }
 
 /* Trial Instructions */
@@ -54,8 +97,6 @@
   font-family: "Times New Roman";
 
 }
-
-/* Images Styles */
 
 /* Applies to the image representing the top left choice during the trial instructions event and the trial event. */
 

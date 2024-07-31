@@ -7,7 +7,7 @@
 # sections for more detail.
 
 # requirements ------------------------------------------------------------
-# External R packages that this script relies on. See help pages for more 
+# External R packages that this script relies on. See help pages for more
 # information on each package.
 
 library(tidyverse)
@@ -51,16 +51,16 @@ mt_import_long(df,
 
 # Geometric processing ----------------------------------------------------
 # Geometric preprocessing of the data. Some common preprocessing operations
-# include: 
-# 
+# include:
+#
 #   symmetric remapping -- mapping trajectories that go up and to
 #     the right to go up and to the left.
 #
 #   aligning start/end --. making sure that all trajectories start at
 #     0,0 and end at 1,1 in coordinate space
 #
-#   normalizing time -- some trials take longer than others and thus have more 
-#     time points. This normalizes trials so that they all have the same number 
+#   normalizing time -- some trials take longer than others and thus have more
+#     time points. This normalizes trials so that they all have the same number
 #     of time points
 
 mt_df %>%
@@ -81,9 +81,9 @@ mt_df %>%
 # trajectory as a bolded line.
 
 mt_plot(mt_df) +
-mt_plot_aggregate(mt_df, 
-                  use = 'tn_trajectories', 
-                  return_type = 'geom', 
+mt_plot_aggregate(mt_df,
+                  use = 'tn_trajectories',
+                  return_type = 'geom',
                   size = 2) -> fig
 
 print(fig)
@@ -93,4 +93,4 @@ print(fig)
 # suit the needs of the experimental design. Here I assume you perform a
 # one-sample t-test testing the null hypothesis that AUC is equal to 0.
 
-t.test(formula = AUC~1, data = mt_df$measures, mu = 0)
+t.test(formula = AUC ~ 1, data = mt_df$measures, mu = 0)
