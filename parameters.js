@@ -22,7 +22,7 @@ var trial_inst_prompt_text = 'Is the image a fruit or a vegetable? Please click 
 var start_button_text      = 'Start';
 
 // trial
-var trial_prompt        = 'Fruit or Veggie?';
+var trial_prompt        = null;//'Fruit or Veggie?';
 var trial_duration      = null;
 var response_ends_trial = true;
 var time_after_response = null;
