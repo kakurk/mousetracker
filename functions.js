@@ -36,7 +36,7 @@ function construct_trial_stim(){
 }
 
 function construct_instr_stim() {
-    return construct_stim_one() + construct_stim_two() + construct_prompt()
+    return construct_stim_one() + construct_stim_two() + construct_trialInstPrompt()
 }
 
 /* Functions for constructing trial stimuli */

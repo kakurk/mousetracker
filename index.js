@@ -57,7 +57,7 @@ var trial = {
   type: jsPsychHtmlButtonResponse,
   stimulus: construct_trial_stim,
   choices: [jsPsych.timelineVariable('stim1'), jsPsych.timelineVariable('stim2')],
-  prompt: trial_prompt,
+  prompt: construct_trialPrompt,
   button_html: ['<img id=topLeftStim src="%choice%"></img>', '<img id=topRightStim src="%choice%"></img>'],
   extensions: [
     {type: jsPsychExtensionMouseTracking, params: {targets: []}}
