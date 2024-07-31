@@ -23,6 +23,8 @@ var start_button_text      = 'Start';
 
 // trial
 var trial_prompt        = 'Fruit or Veggie?'; // can be null
+var video_autoplay      = 'autoplay';
+var video_loop          = 'loop';
 
 // farewell
 var farewell_messsage  = "You have completed the experiment. Thank you for participating!";

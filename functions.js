@@ -41,7 +41,7 @@ function construct_stim_two() {
 
 function construct_trial_stim(){
     if(jsPsych.timelineVariable('stimType') === 'video'){
-        return `<div><video autoplay loop src=${jsPsych.timelineVariable('stimCenter')}></video></div>`
+        return `<div><video ${video_autoplay} ${video_loop} src=${jsPsych.timelineVariable('stimCenter')}></video></div>`
     } else {
         return `<img id=StimCenter src=${jsPsych.timelineVariable('stimCenter')}></img>`
     }
