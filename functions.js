@@ -15,11 +15,11 @@ function construct_instr_buttn() {
 }
 
 function construct_trialInstPrompt() {
-    return `<p id=trialInstPrompt>${prompt_text}</p>`
+    return `<p id=trialInstPrompt>${trial_inst_prompt_text}</p>`
 }
 
 function construct_trialPrompt() {
-    return `<p id=trialPrompt>${prompt_text}</p>`
+    return `<p id=trialPrompt>${trial_prompt}</p>`
 }
 
 
