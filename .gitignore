@@ -2,3 +2,5 @@ img/*
 sound/*
 video/*
 data/*
+.Rproj.user
+.Rhistory
