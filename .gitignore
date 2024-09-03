@@ -4,3 +4,4 @@ video/*
 data/*
 .Rproj.user
 .Rhistory
+*.Rproj
