@@ -122,7 +122,7 @@ Edit this file to change how aspects of the experiment will look.
 
 /* Applies to the image the in the center of the screen during the trial */
 
-#centerStim {
+#StimCenter {
 
   /* Size Styles */  
   width: 150px;
