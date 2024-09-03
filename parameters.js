@@ -31,9 +31,9 @@ Edit this file to change how aspects of how the experiment will run.
 
 // instructions
 var instructions_pages    = ['Welcome to the experiment!', 
-                             'In this experiment, you will be classifying images as either fruits or veggitables',
+                             'In this experiment, you will be making precribing decisions.',
                              'For each trial, you will press start when you are ready to begin.',
-                             'After clicking start, please click the correct category for the displayed image in the upper right or upper left of the screen.',
+                             'After clicking start, please click on the image associated with your preferred treatment option.',
                              'Press next when you are ready to begin.'];
 var button_label_next     = "Next";
 var button_label_previous = "Previous";
@@ -41,11 +41,11 @@ var show_page_number      = true;
 var page_label            = 'Page';
 
 // trial instructions
-var trial_inst_prompt_text = 'Is the image a fruit or a vegetable? Please click on your response as quickly and accurately as you can. Press start to begin trial.'; // can be null
+var trial_inst_prompt_text = 'Which treatment? Please click on your response as quickly and accurately as you can. Press start to begin trial.'; // can be null
 var start_button_text      = 'Start';
 
 // trial
-var trial_prompt        = 'Fruit or Veggie?'; // can be null
+var trial_prompt        = 'Given these two options, which one would you choose?'; // can be null
 var video_autoplay      = 'autoplay'; // leave blank to remove autoplay
 var video_loop          = 'loop'; // leave blank to remove looping
 
