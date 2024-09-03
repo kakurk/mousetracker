@@ -67,10 +67,12 @@ var trial = {
   prompt: construct_trialPrompt,
   button_html: ['<img id=topLeftStim src="%choice%"></img>', '<img id=topRightStim src="%choice%"></img>'],
   extensions: [
-    {type: jsPsychExtensionMouseTracking, params: {targets: []}}
+    {type: jsPsychExtensionMouseTracking, params: {targets: ['#topLeftStim', '#topRightStim']}}
   ],
   data: {
-    task: 'trial'
+    task: 'trial',
+    topLeftButton: jsPsych.timelineVariable('stim1'),
+    topRightButton: jsPsych.timelineVariable('stim2')
   }
 }
 
