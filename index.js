@@ -82,5 +82,10 @@ mouse_track_procedure = {
   timeline_variables: stim_list,
 }
 
+// browser check. How big is the screen?
+var bcheck = {
+  type: jsPsychBrowserCheck
+};
+
 // run the experiment
-jsPsych.run([preload, fullscreen, instructions, mouse_track_procedure]);
+jsPsych.run([preload, fullscreen, bcheck, instructions, mouse_track_procedure]);
