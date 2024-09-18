@@ -13,17 +13,17 @@ This folder contains a template for running an online mouse tracking experiment.
 
 Below is a table describing what each file is in this directory.
 
-| file | description  |
-|--| --|
-| data_dictionary.xlsx | a "dictionary" describing what every column of the output data is.  |
-| functions.js | javascript file containing custom written functions supporting the experimental protocol. Needs to be uploaded to cognition.run as an "External JS/CSS" |
-| guide.md | this guide. |
-| index.browser.js | code for conducting mouse tracking. Needs to be uploaded to cognition.run as an "External JS/CSS" |
-| index.js | code for running the experimental protocol. DO NOT EDIT. Should be copy and pasted to the "Task Code" section of cognition.run |
-| parameters.js | javascript code for defining experimental parameters. Edit this to customize the experiment. Needs to be uploaded to cognition.run as an "External JS/CSS". |
-| stimuli.js | javascript code defining the stimuli to use for each trial of the experiment. Needs to be uploaded to cognition.run as an "External JS/CSS". |
-| stimuli.xlsx | excel version of the stimuli.js. Lists the stimuli to display on each trial. Each row = single trial. |
-| style.css | a cascading style sheet (.css). Controls the "style" of different elements of the experiment. Font size, color, position on the screen, etc. Needs to be uploaded to cognition.run as an "External JS/CSS". |
+| file | description  | need to edit? |
+|--| --| -- |
+| data_dictionary.xlsx | a "dictionary" describing what every column of the output data is.  | NO |
+| functions.js | javascript file containing custom written functions supporting the experimental protocol. Needs to be uploaded to cognition.run as an "External JS/CSS" | NO | 
+| guide.md | this guide. | NO | 
+| index.browser.js | code for conducting mouse tracking. Needs to be uploaded to cognition.run as an "External JS/CSS" | NO |
+| index.js | code for running the experimental protocol. DO NOT EDIT. Should be copy and pasted to the "Task Code" section of cognition.run | NO |
+| parameters.js | javascript code for defining experimental parameters. Edit this to customize the experiment. Needs to be uploaded to cognition.run as an "External JS/CSS". | YES | 
+| stimuli.js | javascript code defining the stimuli to use for each trial of the experiment. Needs to be uploaded to cognition.run as an "External JS/CSS". | YES |
+| stimuli.xlsx | excel version of the stimuli.js. Lists the stimuli to display on each trial. Each row = single trial. | YES |
+| style.css | a cascading style sheet (.css). Controls the "style" of different elements of the experiment. Font size, color, position on the screen, etc. Needs to be uploaded to cognition.run as an "External JS/CSS". | YES |
 
 ## Directories
 
@@ -68,13 +68,13 @@ Go to "Source code". Copy and paste the code from the "index.js" file into the "
 
 Upload these files to the "External JS/CSS" section:
 
-| file | description  |
-|--| --|
-| functions.js | javascript file containing custom written functions supporting the experimental protocol. |
-| index.browser.js | code for conducting mouse tracking. |
-| parameters.js | javascript code for defining experimental parameters. Edit this to customize the experiment. |
-| stimuli.js | javascript code defining the stimuli to use for each trial of the experiment. |
-| style.css | a cascading style sheet (.css). Controls the "style" of different elements of the experiement. Font size, color, position on the screen, etc. |
+| file | description  | need to edit? |
+|--| --| -- |
+| functions.js | javascript file containing custom written functions supporting the experimental protocol. | NO |
+| index.browser.js | code for conducting mouse tracking. | NO |
+| parameters.js | javascript code for defining experimental parameters. Edit this to customize the experiment. | YES |
+| stimuli.js | javascript code defining the stimuli to use for each trial of the experiment. | YES |
+| style.css | a cascading style sheet (.css). Controls the "style" of different elements of the experiement. Font size, color, position on the screen, etc. | YES | 
 
 ![](./guide/step5.gif)
 
@@ -96,15 +96,15 @@ Note: the fullscreen module at the beginning of the experiment does not work in 
 
 Edit these files to customize your experiment:
 
-| file | description  |
-|--| --|
-| parameters.js | javascript code for defining experimental parameters. Edit this to customize various aspects of the experiment. Parameters are organized by "event" type. |
+| file | description  | edit this file? |
+|--| --| -- |
+| parameters.js | javascript code for defining experimental parameters. Edit this to customize various aspects of the experiment. Parameters are organized by "event" type. | YES |
 
 ![](./guide/step8a.gif)
 
-| file | description  |
-|--| --|
-| stimuli.js | javascript code defining the stimuli to use for each trial of the experiment. Use the R helper script `r/csv_to_json.r` for assistance creating this file. |
+| file | description  | edit this file? |
+|--| --| -- |
+| stimuli.js | javascript code defining the stimuli to use for each trial of the experiment. Use the R helper script `r/csv_to_json.r` for assistance creating this file. | YES | 
 
 Edit an excel file:
 
@@ -114,9 +114,9 @@ Use the R helper script `r/csv_to_json.r` to convert excel --> js:
 
 ![](./guide/step8bb.gif)
 
-| file | description  |
-|--| --|
-| style.css | a cascading style sheet (.css). Controls the "style" of different elements of the experiement. Font size, color, position on the screen, etc. Basic styles are included in the template. For more advanced options, [I really like this tutorial fromm w3schools](https://www.w3schools.com/css/default.asp). |
+| file | description  | edit this file? |
+|--| -- | -- |
+| style.css | a cascading style sheet (.css). Controls the "style" of different elements of the experiement. Font size, color, position on the screen, etc. Basic styles are included in the template. For more advanced options, [I really like this tutorial fromm w3schools](https://www.w3schools.com/css/default.asp). | YES |
 
 ![](./guide/step8c.gif)
 
